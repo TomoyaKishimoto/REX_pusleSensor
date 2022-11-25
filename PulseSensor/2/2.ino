@@ -16,9 +16,8 @@ void setup() {
 void loop() {
   pulseVal = analogRead(pulsePin);   // パルスセンサの読み取り
   //Serial.println(pulseVal);        // シリアルモニタに表示
-
-  // もしパルスセンサの値(pulseVal)がしきい値(threshold)より大きければ
-  if(pulseVal >= threshold){
+  
+  if(pulseVal >= threshold){         // もしパルスセンサの値(pulseVal)がしきい値(threshold)より大きければ
     digitalWrite(LEDPin, HIGH);      // LEDをつける
     time = millis();                 // 現在の時間を計測
     timeDiff = time - previousTime;  // 前回の心拍からの経過時間を計算する
@@ -28,10 +27,8 @@ void loop() {
     Serial.println(bpm);
     previousTime = time;             // previousTimeの更新
   }
-
-  // でなければ
-  else{
-    digitalWrite(LEDPin, LOW);     // LEDを消す
+  else{                              // でなければ
+    digitalWrite(LEDPin, LOW);       // LEDを消す
   }
   delay(100);
 }

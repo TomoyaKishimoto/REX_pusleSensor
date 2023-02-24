@@ -2,7 +2,6 @@ int pulsePin = A0;    // パルスセンサの入力ピンをA0にする
 int pulseVal;         // パルスセンサの値を格納する変数 
 
 void setup() {
-  pinMode(LEDPin, OUTPUT); // LEDPinを出力に設定する
   Serial.begin(9600);      // シリアル通信の開始 
 }
 
